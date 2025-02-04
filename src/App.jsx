@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import "./App.css";
 
 const App = () => {
@@ -9,7 +12,12 @@ const App = () => {
   return (
     <div className={darkMode ? "dark" : "light"}>
       <Navbar />
-      <Outlet />
+      <main>
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="projects"><Projects /></section>
+        <section id="contact"><Contact /></section>
+      </main>
     </div>
   );
 };

@@ -1,0 +1,40 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+  
+/* Sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+  
+/* Headings */
+h1, h2, h3 {
+    color: #64FFDA;
+}
+  
+/* Buttons */
+button {
+    background: #64FFDA;
+    color: #0A192F;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+  
+button:hover {
+    background: #E6F1FF;
+    color: #0A192F;
+}

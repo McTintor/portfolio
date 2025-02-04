@@ -1,17 +1,28 @@
 :root {
-    --background-light: #ffffff;
-    --text-light: #000000;
-    --background-dark: #121212;
-    --text-dark: #ffffff;
-  }
-  
-  .light {
-    background-color: var(--background-light);
-    color: var(--text-light);
-  }
-  
-  .dark {
-    background-color: var(--background-dark);
-    color: var(--text-dark);
-  }
-  
+  --background-light: #f8f9fa;
+  --text-light: #212529;
+  --background-dark: #1b1f2a;
+  --text-dark: #e6e6e6;
+}
+
+.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
