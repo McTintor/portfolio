@@ -120,3 +120,51 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
 }
+
+/* Light Theme */
+.light-theme {
+  background: var(--background-light);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme ul li a {
+  color: var(--text-light);
+}
+
+.light-theme ul li a:hover {
+  color: #0077cc;
+}
+
+.light-theme .nav-buttons button {
+  border-color: #0077cc;
+  color: #0077cc;
+}
+
+.light-theme .nav-buttons button:hover {
+  background: #0077cc;
+  color: white;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background: var(--background-dark);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme ul li a {
+  color: var(--text-dark);
+}
+
+.dark-theme ul li a:hover {
+  color: #64FFDA;
+}
+
+.dark-theme .nav-buttons button {
+  border-color: #64FFDA;
+  color: #64FFDA;
+}
+
+.dark-theme .nav-buttons button:hover {
+  background: #64FFDA;
+  color: #0A192F;
+}

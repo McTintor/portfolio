@@ -24,8 +24,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+    document.body.classList.toggle("light", !darkMode);
+  }, [darkMode]);
+  
+
   return (
-    <nav className={showNavbar ? "visible" : "hidden"}>
+    <nav className={`${showNavbar ? "visible" : "hidden"} ${!darkMode ? "dark-theme" : "light-theme"}`}>
       <ul>
         <li><a href="#home">{translations[language].home}</a></li>
         <li><a href="#about">{translations[language].about}</a></li>
@@ -33,7 +39,6 @@ const Navbar = () => {
         <li><a href="#contact">{translations[language].contact}</a></li>
       </ul>
       <div className="nav-buttons">
-        {/* Theme Toggle with Emojis */}
         <div className="theme-toggle">
           <span className="emoji">☀️</span>
           <input

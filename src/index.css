@@ -5,12 +5,12 @@
   --text-dark: #e6e6e6;
 }
 
-.light {
+body.light {
   background-color: var(--background-light);
   color: var(--text-light);
 }
 
-.dark {
+body.dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
 }
