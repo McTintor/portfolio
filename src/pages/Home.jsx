@@ -36,7 +36,7 @@ useEffect(() => {
     } else {
       clearInterval(typingInterval);
     }
-  }, 30);
+  }, 50);
 
   return () => clearInterval(typingInterval);
 }, [language]);
@@ -61,7 +61,7 @@ useEffect(() => {
 
   return (
     <div className={`hero-content ${themeColor}`}>
-      <div className="hero-text" style={{width: textWidth}}>
+      <div className="hero-text" style={{width: textWidth, height: "100%"}}>
         <p className="typed-text">{typedText}</p>
         <div className="hero-buttons">
           <button onClick={handleDownloadCV}>📥 {translations[language].downloadCV}</button>

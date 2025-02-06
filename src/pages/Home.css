@@ -24,7 +24,7 @@
 }
 
 .hero-text {
-    max-width: 70%;
+    max-width: 60%;
 }
 
 
@@ -36,7 +36,8 @@
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    min-height: 2.5rem; /* Prevent height changes */
+    min-height: 12rem;
+    text-align: left;
 }
 
 /* Hidden full text to reserve space */
@@ -93,4 +94,18 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;  /* Initially hidden */
+    animation: fadeIn 1s ease-in-out forwards;  /* Runs once and stays visible */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
