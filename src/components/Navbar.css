@@ -106,7 +106,7 @@ nav ul li a:hover {
 
 /* When dark mode is enabled */
 .theme-toggle input:checked + .toggle-label {
-  background: #64FFDA;
+  background: #0077cc;
 }
 
 .theme-toggle input:checked + .toggle-label .toggle-slider {

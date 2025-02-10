@@ -61,9 +61,9 @@ useEffect(() => {
 
   return (
     <div className={`hero-content ${themeColor}`}>
-      <div className="hero-text" style={{width: textWidth, height: "100%"}}>
-        <p className="typed-text">{typedText}</p>
-        <div className="hero-buttons">
+      <div className={`hero-text ${themeColor}`} style={{width: textWidth, height: "100%"}}>
+        <p className={`typed-text ${themeColor}`}>{typedText}</p>
+        <div className={`hero-buttons ${themeColor}`}>
           <button onClick={handleDownloadCV}>📥 {translations[language].downloadCV}</button>
           <Link to="about" smooth={true} duration={100}>
             <button className="scroll-btn">⬇ {translations[language].continueScrolling}</button>

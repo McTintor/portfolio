@@ -3,16 +3,22 @@
   --text-light: #212529;
   --background-dark: #1b1f2a;
   --text-dark: #e6e6e6;
+
+  /* Patterned Background */
+  --pattern-light:linear-gradient(to right top, #249cf8, #61aef9, #88bff9, #abd1fa, #cce2fa, #cfeafc, #d5f1fe, #ddf8ff, #c2f9ff, #a4faff, #84fbfb, #5ffbf1);
+  --pattern-dark: linear-gradient(to right top, #64ffda, #00d0cc, #00a2b5, #007493, #004a6a, #0f3956, #122942, #101a2e, #131b2d, #161c2c, #191e2b, #1b1f2a);
 }
 
 body.light {
   background-color: var(--background-light);
   color: var(--text-light);
+  background-image: var(--pattern-light);
 }
 
 body.dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
+  background-image: var(--pattern-dark);
 }
 
 html {

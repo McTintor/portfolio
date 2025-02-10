@@ -10,17 +10,35 @@
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Light and Dark Mode */
+/* Light Theme with Blurred Border */
 .hero-content.light {
-    background-color: #ffffff;
+    background-image: linear-gradient(to right, #f8f9fa, #d1e1f1, #abc8e9, #85afe1, #5d97d8, #4b84c5, #3871b2, #235fa0, #284e80, #273d62, #222e45, #1b1f2a);
     color: #212529;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1); /* Soft glow effect */
+    position: relative;
+    border-radius: 10px;
+    padding: 3rem;
 }
+
+/* Blurred Border Effect */
+.hero-content.light::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 15px;
+    background: rgb(255, 255, 255); /* Light blur color */
+    filter: blur(10px); /* Blurred border effect */
+    z-index: -1;
+}
+
 
 .hero-content.dark {
     background-color: #222831; /* Darker, more contrasting */
     color: #e6e6e6;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 10px 5px 10px 10px rgba(27, 26, 34, 0.377);
 }
 
 .hero-text {
@@ -30,7 +48,6 @@
 
 .typed-text {
     font-size: 2rem;
-    border-right: 2px solid #64FFDA;
     display: block;
     max-width: 100%;
     white-space: normal;
@@ -38,6 +55,14 @@
     overflow-wrap: break-word;
     min-height: 12rem;
     text-align: left;
+}
+
+.typed-text.light {
+    border-right: 2px solid #0077cc;
+}
+
+.typed-text.dark {
+    border-right: 2px solid #64FFDA;
 }
 
 /* Hidden full text to reserve space */
@@ -64,28 +89,23 @@
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     border: none;
 }
 
-.hero-buttons button:first-child {
+.hero-buttons.light button {
+    background: #0077cc;
+    color: #ffffff;
+}
+
+.hero-buttons.dark button {
     background: #64FFDA;
     color: #0A192F;
 }
 
-.hero-buttons button:first-child:hover {
-    background: #E6F1FF;
-}
-
-.scroll-btn {
-    background: none;
-    border: 2px solid #64FFDA;
-    color: #64FFDA;
-}
-
-.scroll-btn:hover {
-    background: #64FFDA;
+.hero-buttons button:hover {
     color: #0A192F;
+    background: #ffffff;
 }
 
 /* Image */
