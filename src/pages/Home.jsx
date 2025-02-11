@@ -21,7 +21,7 @@ const Home = () => {
   };
 
 // Typewriter effect
-const heroText = translations[language]?.heroText || ""; // Ensure it's defined
+const heroTexts = Object.values(translations[language]?.heroText || {});
 const [typedText, setTypedText] = useState("");
 
 useEffect(() => {
@@ -29,8 +29,8 @@ useEffect(() => {
   let i = 0;
   let tempText = ""; // Store typed text before setting state
   const typingInterval = setInterval(() => {
-    if (i < heroText.length) {
-      tempText += heroText[i]; // Update local variable first
+    if (i < heroTexts.length) {
+      tempText += heroTexts[i]; // Update local variable first
       setTypedText(tempText); // Set state once per cycle
       i++;
     } else {
@@ -41,27 +41,12 @@ useEffect(() => {
   return () => clearInterval(typingInterval);
 }, [language]);
 
-const [textWidth, setTextWidth] = useState("auto");
-
-useEffect(() => {
-  // Create an offscreen span to measure text width
-  const span = document.createElement("span");
-  span.style.visibility = "hidden";
-  span.style.whiteSpace = "nowrap";
-  span.style.position = "absolute";
-  span.style.fontSize = "2rem"; // Match your typed text style
-  span.innerText = heroText;
-
-  document.body.appendChild(span);
-  setTextWidth(`${span.offsetWidth}px`); // Store width
-  document.body.removeChild(span);
-}, [heroText]);
 
 
 
   return (
     <div className={`hero-content ${themeColor}`}>
-      <div className={`hero-text ${themeColor}`} style={{width: textWidth, height: "100%"}}>
+      <div className={`hero-text ${themeColor}`}>
         <p className={`typed-text ${themeColor}`}>{typedText}</p>
         <div className={`hero-buttons ${themeColor}`}>
           <button onClick={handleDownloadCV}>📥 {translations[language].downloadCV}</button>

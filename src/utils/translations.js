@@ -7,7 +7,13 @@ const translations = {
       contact: "Contact",
       theme: "Theme",
       lang: "Language",
-      heroText: "Welcome. I'm a full-stack web developer specializing in React and Node.js. I build scalable, user-friendly web applications with clean, maintainable code. Explore my portfolio to see my projects and connect with me!",
+      heroText: {
+                  1: `• Building scalable, high-performance web applications`,
+                  2: `• Specializing in modern JavaScript frameworks (React, Node.js)`,
+                  3: `• Writing clean, maintainable, and efficient code`,
+                  4: `• Creating seamless user experiences with responsive design`,
+                  5: `• Integrating back-end APIs and databases for full-stack solutions`},
+
       downloadCV: "Download CV",
       continueScrolling: "Continue down",
       description: `Hi, I’m Igor, a passionate web developer with a love for building clean, functional, and user-friendly applications. Whether it's front-end design or back-end logic, I enjoy creating efficient and engaging digital experiences.
