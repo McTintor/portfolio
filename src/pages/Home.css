@@ -2,9 +2,9 @@
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px;
-    max-width: 1200px;
+    width: 70%;
     padding: 3rem;
     border-radius: 10px;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -12,8 +12,9 @@
 
 /* Light Theme with Blurred Border */
 .hero-content.light {
-    background-image: linear-gradient(to right, #f8f9fa, #d1e1f1, #abc8e9, #85afe1, #5d97d8, #4b84c5, #3871b2, #235fa0, #284e80, #273d62, #222e45, #1b1f2a);
-    color: #212529;
+    /* background-image: linear-gradient(to right, #f8f9fa, #d1e1f1, #abc8e9, #85afe1, #5d97d8, #4b84c5, #3871b2, #235fa0, #284e80, #273d62, #222e45, #1b1f2a); */
+    background-color: #1b1f2a;
+    color: #e6e6e6;
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1); /* Soft glow effect */
     position: relative;
     border-radius: 10px;
@@ -55,14 +56,7 @@
     overflow-wrap: break-word;
     min-height: 15rem;
     text-align: left;
-}
-
-.typed-text.light {
-    border-right: 2px solid #0077cc;
-}
-
-.typed-text.dark {
-    border-right: 2px solid #64FFDA;
+    line-height: 3rem;
 }
 
 /* Hidden full text to reserve space */
@@ -91,6 +85,8 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     border: none;
+    width: 11rem;
+    min-height: 3rem;
 }
 
 .hero-buttons.light button {
@@ -116,6 +112,14 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     opacity: 0;  /* Initially hidden */
     animation: fadeIn 1s ease-in-out forwards;  /* Runs once and stays visible */
+}
+
+.hero-image img.dark {
+    border-left: 2px solid #64FFDA;
+}
+
+.hero-image img.light {
+    border-left: 2px solid #0077cc;
 }
 
 /* Fade-in animation */

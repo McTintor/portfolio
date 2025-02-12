@@ -1,0 +1,23 @@
+.projects-h1.dark {
+    color: #1b1f2a;
+}
+
+.project-p {
+    font-size: 1rem;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+.projects-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.project {
+    width: 30%;
+}

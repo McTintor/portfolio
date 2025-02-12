@@ -56,7 +56,7 @@ useEffect(() => {
         </div>
       </div>
       <div className="hero-image">
-        <img src={profilePic} alt="Profile" className="fade-in" />
+        <img src={profilePic} alt="Profile" className={`fade-in ${themeColor}`} />
       </div>
     </div>
   );

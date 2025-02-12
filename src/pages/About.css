@@ -15,7 +15,6 @@
     padding: 3rem;
     border: 1px solid gray;
     border-radius: 10px;
-    margin-top: 25rem;
     position: relative;
     overflow: hidden;
     transition: background 0.1s ease;
@@ -42,7 +41,7 @@
 }
 
 /* Light Theme with Blurred Border */
-.about-tech.light {
+.about-tech.dark {
     background-color: #f8f9f8;
     color: #212529;
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1); /* Soft glow effect */
@@ -51,10 +50,14 @@
     padding: 3rem;
 }
 
-.about-tech.dark {
+.about-tech.light {
     background-color: #222831; /* Darker, more contrasting */
     color: #e6e6e6;
     box-shadow: 10px 5px 10px 10px rgba(27, 26, 34, 0.377);
+}
+
+.about-p {
+    font-size: 1.5rem;
 }
 
 .tech-container {
@@ -63,17 +66,21 @@
     border: 1px solid gray;
     border-radius: 10px;
     padding: 10px 0;
-    -webkit-box-shadow: 22px 10px 61px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 22px 10px 61px -18px rgba(0,0,0,0.75);
-    box-shadow: 22px 10px 61px -18px rgba(0,0,0,0.75);
+    box-shadow: 12px 10px 31px -18px rgba(0, 0, 0, 0.75);
+    transition: transform 0.1s ease-out;
 }
 
-.tech-container.light {
+.tech-container.tilt {
+    transform: rotate3d(var(--x-axis), var(--y-axis), 0, var(--angle));
+}
+
+
+.tech-container.dark {
     background-color: #ffffff;
     background: repeating-linear-gradient( 45deg, #f9f9f9, #f9f9f9 7px, #ffffff 7px, #ffffff 35px );
 }
 
-.tech-container.dark {
+.tech-container.light {
     background-color: #31353f;
     background: repeating-linear-gradient( 45deg, #1b1f2a, #1b1f2a 7px, #31353f 7px, #31353f 35px );
 }
