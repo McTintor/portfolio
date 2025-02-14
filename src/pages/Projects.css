@@ -13,12 +13,13 @@
 
 .project-p {
     font-size: 1rem;
+    text-align: left;
 }
 
 .project-p a {
     all: unset;
     cursor: pointer;
-    
+    font-size: 0.9rem;
 }
 
 .project-p a:hover {
@@ -66,3 +67,10 @@
     border-bottom: 1px solid gray;
 }
 
+.project-p svg {
+    border-radius: 50%;
+}
+
+.project-p svg.light {
+    background-color: #64FFDA;
+}

@@ -61,17 +61,17 @@ const About = () => {
       <div ref={aboutRef} className={`about-text ${themeColor}`} onMouseMove={handleMouseMove} style={{ "--x": mousePosition.x, "--y": mousePosition.y }}>
         <p className="about-p">{translations[language].description}</p>
       </div>
-      <h2 className={`t-h ${themeColor}`}>Technologies I use</h2>
+      <h2 className={`t-h ${themeColor}`}>{translations[language].abouth2}</h2>
       <div className={`about-tech ${themeColor}`}>
         {[
-          { src: js, alt: "JavaScript", title: "JavaScript", desc: "Programming Language" },
-          { src: postgre, alt: "PostgreSQL", title: "PostgreSQL", desc: "Database" },
-          { src: react, alt: "React JS", title: "React JS", desc: "Front-End Framework" },
-          { src: next, alt: "Next JS", title: "Next JS", desc: "Web Framework" },
-          { src: node, alt: "Node JS", title: "Node JS", desc: "Web Server" },
-          { src: express, alt: "Express JS", title: "Express JS", desc: "Back-End Framework" },
-          { src: css, alt: "CSS", title: "CSS", desc: "Styling" },
-          { src: mongodb, alt: "MongoDB", title: "MongoDB", desc: "Database" },
+          { src: js, alt: "JavaScript", title: "JavaScript", desc: translations[language].pd1 },
+          { src: postgre, alt: "PostgreSQL", title: "PostgreSQL", desc: translations[language].pd2 },
+          { src: react, alt: "React JS", title: "React JS", desc: translations[language].pd3 },
+          { src: next, alt: "Next JS", title: "Next JS", desc: translations[language].pd4 },
+          { src: node, alt: "Node JS", title: "Node JS", desc: translations[language].pd5 },
+          { src: express, alt: "Express JS", title: "Express JS", desc: translations[language].pd6 },
+          { src: css, alt: "CSS", title: "CSS", desc: translations[language].pd7 },
+          { src: mongodb, alt: "MongoDB", title: "MongoDB", desc: translations[language].pd8 },
         ].map((tech, index) => (
           <div key={index} className={`tech-container ${themeColor}`}>
             <img src={tech.src} alt={tech.alt} className="icon" />
