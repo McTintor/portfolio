@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #1b1f2a;
+    color: #f8f8f8;
+}
+
+footer a {
+    all: unset;
+    cursor: pointer;
+}
