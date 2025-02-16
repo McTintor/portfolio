@@ -42,7 +42,10 @@ I'm always open to new opportunities and excited to collaborate on interesting p
       contactbtn: "Send Message",
       contactnameplaceholder: "John Doe",
       contactemailplaceholder: "johndoe@email.com",
-      contactmessageplaceholder: "Your Message"
+      contactmessageplaceholder: "Your Message",
+      sending: "Sending...",
+      successmessage: "Message sent successfully!",
+      failedmessage: "Failed to send the message. Please try again later."
     },
     sr: {
       home: "Početna",
@@ -85,7 +88,10 @@ Uvek sam otvoren za nove prilike i uzbuđen zbog mogućnosti saradnje na zanimlj
       contactbtn: "Pošalji poruku",
       contactnameplaceholder: "Petar Petrović",
       contactemailplaceholder: "petarpetrovic@email.com",
-      contactmessageplaceholder: "Vaša poruka"
+      contactmessageplaceholder: "Vaša poruka",
+      sending: "Šalje se...",
+      successmessage: "Uspešno poslata poruka!",
+      failedmessage: "Greška. Poruka nije poslata."
     },
   };
   

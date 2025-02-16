@@ -10,7 +10,8 @@ const Contact = () => {
     const themeColor = theme ? "light" : "dark";
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null);
   const formRef = useRef();
   
   const handleChange = (e) => {
@@ -18,26 +19,39 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage(null);
 
-    emailjs
-      .sendForm(
-        'service_k7wy6ji',
-        'template_52y8kkr',
+    try {
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        '7u5Pzyj0FSdayL8Ev'
-      )
-      .then(
-        (result) => {
-          console.log('Email successfully sent!', result.text);
-          alert('Message sent successfully!');
-        },
-        (error) => {
-          console.log('Failed to send email:', error.text);
-          alert('Failed to send message. Please try again.');
-        }
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      console.log("Success:", result.text);
+      setStatusMessage({ type: "success", text: translations[language].successmessage });
+      setFormData({ name: '', email: '', message: '' });
+      formRef.current.reset();
+
+      setTimeout(() => {
+        setStatusMessage(null);
+      }, 3000);
+    } catch (error) {
+      console.error("Failed:", error);
+      setStatusMessage({
+        type: "error",
+        text: translations[language].failedmessage,
+      });
+      setTimeout(() => {
+        setStatusMessage(null);
+      }, 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,6 +95,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
           />
           </div>
           <div className='input-div'>
@@ -94,6 +109,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
           />
           </div>
           </div>
@@ -107,10 +123,22 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
+            disabled={isSubmitting}
           />
           </div>
-          <button type="submit">{translations[language].contactbtn}</button>
+          <button type="submit" disabled={isSubmitting}>{isSubmitting ? translations[language].sending : translations[language].contactbtn}</button>
         </form>
+
+        {statusMessage && (
+        <p
+          style={{
+            color: statusMessage.type === "success" ? "green" : "red",
+            marginTop: "10px",
+          }}
+        >
+          {statusMessage.text}
+        </p>
+      )}
       </div>
     </div>
   );

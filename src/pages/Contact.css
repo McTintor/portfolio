@@ -100,3 +100,10 @@ form {
 label.light {
     color: #64FFDA;
 }
+
+.success-message {
+    color: green;
+  }
+  .error-message {
+    color: red;
+  }  
