@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    padding: 1rem;
 }
 
 .projects-h1.dark {
@@ -31,22 +32,27 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
 .project-container {
     min-height: 30rem;
-    width: 20%;
-    padding: 1rem 3rem;    
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem 1.5rem;
     border-radius: 10px;
     position: relative;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .project-container:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .project-container.dark {
@@ -62,8 +68,9 @@
 }
 
 .project-container img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
     border-bottom: 1px solid gray;
 }
 
@@ -73,4 +80,39 @@
 
 .project-p svg.light {
     background-color: #64FFDA;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-container {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .project-container img {
+        max-width: 150px;
+    }
+
+    .project-p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-container {
+        padding: 1rem;
+    }
+
+    .project-container img {
+        max-width: 120px;
+    }
+
+    .project-p {
+        font-size: 0.8rem;
+    }
 }

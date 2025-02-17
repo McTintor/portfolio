@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,17 +29,37 @@ const Navbar = () => {
     document.body.classList.toggle("dark", darkMode);
     document.body.classList.toggle("light", !darkMode);
   }, [darkMode]);
-  
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-    <nav className={`${showNavbar ? "visible" : "hidden"} ${!darkMode ? "dark-theme" : "light-theme"}`}>
-      <ul>
-        <li><a href="#home">{translations[language].home}</a></li>
-        <li><a href="#about">{translations[language].about}</a></li>
-        <li><a href="#projects">{translations[language].projects}</a></li>
-        <li><a href="#contact">{translations[language].contact}</a></li>
+    <nav
+      className={`${showNavbar ? "visible" : "hidden"} ${
+        !darkMode ? "dark-theme" : "light-theme"
+      }`}
+    >
+      <div className="menu-icon" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul className={menuOpen ? "open" : ""} onClick={() => setMenuOpen(false)}>
+        <li>
+          <a href="#home">{translations[language].home}</a>
+        </li>
+        <li>
+          <a href="#about">{translations[language].about}</a>
+        </li>
+        <li>
+          <a href="#projects">{translations[language].projects}</a>
+        </li>
+        <li>
+          <a href="#contact">{translations[language].contact}</a>
+        </li>
       </ul>
-      <div className="nav-buttons">
+      <div className={`nav-buttons ${menuOpen ? "open" : ""}`}>
         <div className="theme-toggle">
           <span className="emoji">☀️</span>
           <input
@@ -52,8 +73,6 @@ const Navbar = () => {
           </label>
           <span className="emoji">🌙</span>
         </div>
-
-        {/* Language Toggle */}
         <button onClick={() => dispatch(toggleLanguage())}>
           {language === "en" ? "🇬🇧 EN" : "🇷🇸 SR"}
         </button>

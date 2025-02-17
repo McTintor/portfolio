@@ -12,6 +12,7 @@ nav {
   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 nav ul {
@@ -45,10 +46,10 @@ nav ul li a:hover {
 
 /* Button Styles */
 .nav-buttons {
-  margin-right: 3rem;
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin-right: 0;
 }
 
 /* Language Button */
@@ -104,7 +105,6 @@ nav ul li a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* When dark mode is enabled */
 .theme-toggle input:checked + .toggle-label {
   background: #0077cc;
 }
@@ -113,7 +113,6 @@ nav ul li a:hover {
   transform: translateX(20px);
 }
 
-/* Emoji Placement */
 .theme-toggle .emoji {
   font-size: 1.2rem;
   line-height: 1;
@@ -129,6 +128,10 @@ nav ul li a:hover {
 
 .light-theme ul li a {
   color: var(--text-light);
+}
+
+.light-theme ul.open li a {
+  color: var(--text-dark);
 }
 
 .light-theme ul li a:hover {
@@ -167,4 +170,78 @@ nav ul li a:hover {
 .dark-theme .nav-buttons button:hover {
   background: #64FFDA;
   color: #0A192F;
+}
+
+/* Hamburger Menu */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  transition: background 0.3s ease;
+}
+
+.light-theme .menu-icon div {
+  background-color: var(--text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: var(--background-dark);
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .nav-buttons {
+    display: none;
+    align-items: center;
+    margin-right: 5rem;
+    gap: 10px;
+  }
+
+  .nav-buttons.open {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: row;
+  }
+
+  nav ul {
+    top: 55px;
+  }
+}
+
+/* Ensure transitions work smoothly */
+nav, .menu-icon, .nav-buttons, nav ul, nav ul li a, .nav-buttons button, .toggle-label, .toggle-label .toggle-slider {
+  transition: all 0.3s ease-in-out;
 }

@@ -8,21 +8,18 @@
     padding: 3rem;
     border-radius: 10px;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-/* Light Theme with Blurred Border */
-.hero-content.light {
-    /* background-image: linear-gradient(to right, #f8f9fa, #d1e1f1, #abc8e9, #85afe1, #5d97d8, #4b84c5, #3871b2, #235fa0, #284e80, #273d62, #222e45, #1b1f2a); */
+  }
+  
+  .hero-content.light {
     background-color: #1b1f2a;
     color: #e6e6e6;
-    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1); /* Soft glow effect */
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     border-radius: 10px;
     padding: 3rem;
-}
-
-/* Blurred Border Effect */
-.hero-content.light::before {
+  }
+  
+  .hero-content.light::before {
     content: "";
     position: absolute;
     top: -5px;
@@ -30,24 +27,23 @@
     right: -5px;
     bottom: -5px;
     border-radius: 15px;
-    background: rgb(255, 255, 255); /* Light blur color */
-    filter: blur(10px); /* Blurred border effect */
+    background: rgb(255, 255, 255);
+    filter: blur(10px);
     z-index: -1;
-}
-
-
-.hero-content.dark {
-    background-color: #222831; /* Darker, more contrasting */
+  }
+  
+  .hero-content.dark {
+    background-color: #222831;
     color: #e6e6e6;
     box-shadow: 10px 5px 10px 10px rgba(27, 26, 34, 0.377);
-}
-
-.hero-text {
-    max-width: 75%;
-}
-
-
-.typed-text {
+  }
+  
+  /* Text */
+  .hero-text {
+    max-width: 60%;
+  }
+  
+  .typed-text {
     font-size: 2rem;
     display: block;
     max-width: 100%;
@@ -57,27 +53,17 @@
     min-height: 15rem;
     text-align: left;
     line-height: 3rem;
-}
-
-/* Hidden full text to reserve space */
-.typed-text-placeholder {
-    font-size: 2rem;
-    visibility: hidden;
-    position: absolute;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-
-/* Buttons */
-.hero-buttons {
+  }
+  
+  /* Buttons */
+  .hero-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-top: 20px;
-}
-
-.hero-buttons button {
+  }
+  
+  .hero-buttons button {
     padding: 12px 18px;
     font-size: 1rem;
     font-weight: bold;
@@ -87,49 +73,123 @@
     border: none;
     width: 11rem;
     min-height: 3rem;
-}
-
-.hero-buttons.light button {
+  }
+  
+  .hero-buttons.light button {
     background: #0077cc;
     color: #ffffff;
-}
-
-.hero-buttons.dark button {
+  }
+  
+  .hero-buttons.dark button {
     background: #64FFDA;
     color: #0A192F;
-}
-
-.hero-buttons button:hover {
+  }
+  
+  .hero-buttons button:hover {
     color: #0A192F;
     background: #ffffff;
-}
-
-/* Image */
-.hero-image img {
+  }
+  
+  /* Image */
+  .hero-image img {
     width: 300px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0;  /* Initially hidden */
-    animation: fadeIn 1s ease-in-out forwards;  /* Runs once and stays visible */
-}
-
-.hero-image img.dark {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  .hero-image img.dark {
     border-left: 2px solid #64FFDA;
-}
-
-.hero-image img.light {
+  }
+  
+  .hero-image img.light {
     border-left: 2px solid #0077cc;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
+  }
+  
+  @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(10px);
+      opacity: 0;
+      transform: translateY(10px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+      width: 90%;
+      padding: 2rem;
+    }
+  
+    .hero-text {
+      max-width: 100%;
+    }
+  
+    .typed-text {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      min-height: 10rem;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
+  
+    .hero-image img {
+      width: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 1.5rem;
+      gap: 30px;
+    }
+  
+    .typed-text {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      min-height: 8rem;
+    }
+  
+    .hero-buttons button {
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      width: 9rem;
+    }
+  
+    .hero-image img {
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-content {
+      padding: 1rem;
+      gap: 20px;
+    }
+  
+    .typed-text {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      min-height: 6rem;
+    }
+  
+    .hero-buttons button {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      width: 8rem;
+    }
+  
+    .hero-image img {
+      width: 150px;
+    }
+  }
+  
