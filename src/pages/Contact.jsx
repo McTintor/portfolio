@@ -26,10 +26,10 @@ const Contact = () => {
 
     try {
       const result = await emailjs.sendForm(
-        'service_k7wy6ji',
-        'template_52y8kkr',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        '7u5Pzyj0FSdayL8Ev'
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       console.log("Success:", result.text);
