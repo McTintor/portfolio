@@ -31,15 +31,15 @@ const About = () => {
     const techContainers = document.querySelectorAll(".tech-container");
 
     const handleMouseEnter = (e) => {
-      const x = Math.random() < 0.5 ? -1 : 1; // Random X direction
-      const y = Math.random() < 0.5 ? -1 : 1; // Random Y direction
-      const angle = `${Math.random() * 10 + 5}deg`; // Random tilt angle (5-15 degrees)
+      const x = Math.random() < 0.5 ? -1 : 1;
+      const y = Math.random() < 0.5 ? -1 : 1;
+      const angle = `${Math.random() * 10 + 5}deg`;
 
       e.currentTarget.style.transform = `rotate3d(${x}, ${y}, 0, ${angle})`;
     };
 
     const handleMouseLeave = (e) => {
-      e.currentTarget.style.transform = "rotate3d(0, 0, 0, 0deg)"; // Reset tilt
+      e.currentTarget.style.transform = "rotate3d(0, 0, 0, 0deg)";
     };
 
     techContainers.forEach((div) => {
@@ -47,7 +47,7 @@ const About = () => {
       div.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    // Cleanup event listeners
+    
     return () => {
       techContainers.forEach((div) => {
         div.removeEventListener("mouseenter", handleMouseEnter);

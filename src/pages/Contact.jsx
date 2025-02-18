@@ -114,7 +114,7 @@ const Contact = () => {
           </div>
           </div>
           <div className='textarea-div'>
-            <label className={`${themeColor}`} htmlFor="message">{translations[language].contactmessage}</label>
+            <label className={`${themeColor}`} htmlFor="message">{translations[language].contactmsg}</label>
           <textarea
             className={`${themeColor}`}
             id="message"
@@ -126,7 +126,7 @@ const Contact = () => {
             disabled={isSubmitting}
           />
           </div>
-          <button type="submit" disabled={isSubmitting}>{isSubmitting ? translations[language].sending : translations[language].contactbtn}</button>
+          <button className='submitbtn' type="submit" disabled={isSubmitting}>{isSubmitting ? translations[language].sending : translations[language].contactbtn}</button>
         </form>
 
         {statusMessage && (

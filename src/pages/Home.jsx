@@ -25,13 +25,13 @@ const heroTexts = Object.values(translations[language]?.heroText || {});
 const [typedText, setTypedText] = useState("");
 
 useEffect(() => {
-  setTypedText(""); // Reset text before typing starts
+  setTypedText("");
   let i = 0;
-  let tempText = ""; // Store typed text before setting state
+  let tempText = "";
   const typingInterval = setInterval(() => {
     if (i < heroTexts.length) {
-      tempText += heroTexts[i]; // Update local variable first
-      setTypedText(tempText); // Set state once per cycle
+      tempText += heroTexts[i];
+      setTypedText(tempText);
       i++;
     } else {
       clearInterval(typingInterval);

@@ -9,7 +9,7 @@
 }
 
 .about-text {
-    max-width: 90%;
+    max-width: 80%;
     text-align: left;
     line-height: 2rem;
     padding: 2rem;
@@ -103,7 +103,7 @@
     color: #1b1f2a;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .about-text {
         line-height: 1.5rem;
