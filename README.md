@@ -36,7 +36,7 @@ src
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/mctintor/portfolio.git
    ```
 2. Navigate to the project folder:
    ```bash
@@ -56,7 +56,7 @@ src
 - Visit `http://localhost:5173/` in your browser.
 - Navigate between the **Home**, **About Me**, **Projects**, and **Contact** pages.
 - Toggle between **Dark/Light Mode** using the switch in the navbar.
-- Switch between **English/Serbian Language** using the language toggle.
+- Switch between **English/Serbian** languages using the language toggle.
 - Check out my **Projects** by viewing each project card.
 - Download and view my **CV** with a download button.
 - Fill out and submit a message via the **Contact Form**.
