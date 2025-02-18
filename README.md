@@ -2,9 +2,7 @@
 
 This is a modern, fully responsive personal portfolio website built with **React** designed to showcase my projects, CV, and provide contact information. It features a clean and professional design with dark/light theme support and language switching functionality (English and Serbian).
 
-### Live Demo
-
-[Live Website](https://igortintor-portfolio.netlify.app/)
+### Live version [here](https://igortintor-portfolio.netlify.app/).
 
 ## Features
 
@@ -38,11 +36,11 @@ src
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone https://github.com/yourusername/portfolio.git
    ```
 2. Navigate to the project folder:
    ```bash
-   cd portfolio-website
+   cd portfolio
    ```
 3. Install dependencies:
    ```bash
