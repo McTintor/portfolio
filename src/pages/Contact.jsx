@@ -29,7 +29,7 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        '7u5Pzyj0FSdayL8Ev'
       );
 
       console.log("Success:", result.text);
@@ -85,9 +85,9 @@ const Contact = () => {
         <form ref={formRef} onSubmit={handleSubmit}>
             <div className="inputs">
             <div className='input-div'>
-            <label className={`${themeColor}`} htmlFor="name">{translations[language].contactname}</label>
+            <label className={themeColor} htmlFor="name">{translations[language].contactname}</label>
           <input
-            className={`${themeColor}`}
+            className={themeColor}
             id="name"
             type="text"
             name="name"
@@ -99,9 +99,9 @@ const Contact = () => {
           />
           </div>
           <div className='input-div'>
-            <label className={`${themeColor}`} htmlFor="email">{translations[language].contactemail}</label>
+            <label className={themeColor} htmlFor="email">{translations[language].contactemail}</label>
           <input
-            className={`${themeColor}`}
+            className={themeColor}
             id="email"
             type="email"
             name="email"
@@ -114,9 +114,9 @@ const Contact = () => {
           </div>
           </div>
           <div className='textarea-div'>
-            <label className={`${themeColor}`} htmlFor="message">{translations[language].contactmsg}</label>
+            <label className={themeColor} htmlFor="message">{translations[language].contactmsg}</label>
           <textarea
-            className={`${themeColor}`}
+            className={themeColor}
             id="message"
             name="message"
             placeholder={translations[language].contactmessageplaceholder}
